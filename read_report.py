@@ -9,13 +9,13 @@ import pdfkit as pdf
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 #read excel file
-data = pd.ExcelFile('/home/ec2-user/book.xlsx')
+data = pd.ExcelFile('book.xlsx')
 
 #set dataframes for each sheet
-df1 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'G,H,I')
-df2 = pd.read_excel(data, '2-system.memory.usage.physical.', parse_cols = 'G,H,I')
-df3 = pd.read_excel(data, '3-system.disk.used.util.percent', parse_cols = 'G,H,I')
-df4 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'A,B')
+df1 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'J,K,L')
+df2 = pd.read_excel(data, '2-system.memory.usage.physical.', parse_cols = 'J,K,L')
+df3 = pd.read_excel(data, '3-system.disk.used.util.percent', parse_cols = 'J,K,L')
+df4 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'D,E')
 
 df1 = df1[df1['Minimum'].notnull()]
 df2 = df2[df2['Minimum'].notnull()]
