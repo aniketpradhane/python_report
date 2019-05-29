@@ -26,11 +26,11 @@ df5 = pd.read_excel(data, '4-network.out', parse_cols = 'J,K,L')
 df6 = pd.read_excel(data, '5-network.in', parse_cols = 'J,K,L')
 df4 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'D,E')
 
-df1 = df1[df1['Resource Name'].notnull()]
-df2 = df2[df2['Resource Name'].notnull()]
-df3 = df3[df3['Resource Name'].notnull()]
-df5 = df5[df5['Resource Name'].notnull()]
-df6 = df6[df6['Resource Name'].notnull()]
+df1 = df1[df1['Minimum'].notnull()]
+df2 = df2[df2['Minimum'].notnull()]
+df3 = df3[df3['Minimum'].notnull()]
+df5 = df5[df5['Minimum'].notnull()]
+df6 = df6[df6['Minimum'].notnull()]
 df4 = df4[df4['Resource Name'].notnull()]
 
 #combine sheets with formating
