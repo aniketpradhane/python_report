@@ -34,7 +34,7 @@ df6 = df6[df6['IP Address'].notnull()]
 df4 = df4[df4['Resource Name'].notnull()]
 
 #combine sheets with formating
-con = pd.concat([df4['Resource Name'],df1['Minimum'],df1['Maximum'],df1['Average'],df2['Minimum'],df2['Maximum'],df2['Average'],df3['Minimum'],df3['Maximum'],df3['Average'],df5['Minimum'],df5['Maximum'],df5['Average'],df6['Minimum'],df6['Maximum'],df6['Average']],axis = 1, keys = ['','CPU','Memory','Disk','Network_OUT','Network_IN'],join='inner')
+con = pd.concat([df4['Resource Name'],df4['IP Address'],df1['Minimum'],df1['Maximum'],df1['Average'],df2['Minimum'],df2['Maximum'],df2['Average'],df3['Minimum'],df3['Maximum'],df3['Average'],df5['Minimum'],df5['Maximum'],df5['Average'],df6['Minimum'],df6['Maximum'],df6['Average']],axis = 1, keys = ['','CPU','Memory','Disk','Network_OUT','Network_IN'],join='inner')
 
 ht = con.to_html('ht.html')
 
