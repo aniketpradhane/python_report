@@ -34,7 +34,7 @@ df6 = df6[df6['IP Address'].notnull()]
 df4 = df4[df4['Resource Name'].notnull()]
 
 #combine sheets with formating
-con = pd.concat([df4,df1.reset_index(name='J'),df2.reset_index(drop=True),df3.reset_index(drop=True),df5.reset_index(drop=True),df6.reset_index(drop=True)],axis = 1, keys = ['','CPU','Memory','Disk','Network_OUT','Network_IN'],join='inner')
+con = pd.concat([df4,df1.reset_index(name='IP Address'),df2.reset_index(drop=True),df3.reset_index(drop=True),df5.reset_index(drop=True),df6.reset_index(drop=True)],axis = 1, keys = ['','CPU','Memory','Disk','Network_OUT','Network_IN'],join='inner')
 
 ht = con.to_html('ht.html')
 
