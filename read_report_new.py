@@ -26,12 +26,12 @@ df5 = pd.read_excel(data, '4-network.out', parse_cols = 'J,K,L')
 df6 = pd.read_excel(data, '5-network.in', parse_cols = 'J,K,L')
 df4 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'D,E')
 
-df1 = df1[df1['Minimum'].null()]
-df2 = df2[df2['Minimum'].null()]
-df3 = df3[df3['Minimum'].null()]
-df5 = df5[df5['Minimum'].null()]
-df6 = df6[df6['Minimum'].null()]
-df4 = df4[df4['Resource Name'].notnull()]
+df1 = df1[df1['Minimum'].isnull()]
+df2 = df2[df2['Minimum'].isnull()]
+df3 = df3[df3['Minimum'].isnull()]
+df5 = df5[df5['Minimum'].isnull()]
+df6 = df6[df6['Minimum'].isnull()]
+df4 = df4[df4['Resource Name'].isnull()]
 
 #combine sheets with formating
 con = pd.concat([df4,df1.reset_index(drop=True),df2.reset_index(drop=True),df3.reset_index(drop=True),df5.reset_index(drop=True),df6.reset_index(drop=True)],axis = 1, keys = ['','CPU','Memory','Disk','Network_OUT','Network_IN'],join='inner')
