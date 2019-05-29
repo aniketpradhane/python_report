@@ -19,18 +19,18 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 data = pd.ExcelFile('book.xlsx')
 
 #set dataframes for each sheet
-df1 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'J,K,L')
-df2 = pd.read_excel(data, '2-system.memory.usage.physical.', parse_cols = 'J,K,L')
-df3 = pd.read_excel(data, '3-system.disk.used.util.percent', parse_cols = 'J,K,L')
-df5 = pd.read_excel(data, '4-network.out', parse_cols = 'J,K,L')
-df6 = pd.read_excel(data, '5-network.in', parse_cols = 'J,K,L')
+df1 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'E,J,K,L')
+df2 = pd.read_excel(data, '2-system.memory.usage.physical.', parse_cols = 'E,J,K,L')
+df3 = pd.read_excel(data, '3-system.disk.used.util.percent', parse_cols = 'E,J,K,L')
+df5 = pd.read_excel(data, '4-network.out', parse_cols = 'E,J,K,L')
+df6 = pd.read_excel(data, '5-network.in', parse_cols = 'E,J,K,L')
 df4 = pd.read_excel(data, '1-system.cpu.utilization', parse_cols = 'D,E')
 
-df1 = df1[df1['Minimum'].notnull()]
-df2 = df2[df2['Minimum'].notnull()]
-df3 = df3[df3['Minimum'].notnull()]
-df5 = df5[df5['Minimum'].notnull()]
-df6 = df6[df6['Minimum'].notnull()]
+df1 = df1[df1['IP Address'].notnull()]
+df2 = df2[df2['IP Address'].notnull()]
+df3 = df3[df3['IP Address'].notnull()]
+df5 = df5[df5['IP Address'].notnull()]
+df6 = df6[df6['IP Address'].notnull()]
 df4 = df4[df4['Resource Name'].notnull()]
 
 #combine sheets with formating
